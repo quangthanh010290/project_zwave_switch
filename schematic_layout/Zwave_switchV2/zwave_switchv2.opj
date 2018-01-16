@@ -1,0 +1,36 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\zwave_switchv2.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (ISPCBBASICLICENSE "false")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\zwave_switchv2.dsn")
+      (Path "Design Resources" ".\zwave_switchv2.dsn" "SCHEMATIC1")
+      (Select "Design Resources" ".\zwave_switchv2.dsn" "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 420"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 156 1498 156 615")
+        (Scroll "-62 160")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "F:\GIT\CADENCE\MODULES\ZWAVE_SWITCHV2\ZWAVE_SWITCHV2.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

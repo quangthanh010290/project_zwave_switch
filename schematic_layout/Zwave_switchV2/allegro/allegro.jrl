@@ -1,0 +1,38 @@
+\t (00:04:17) allegro 17.2 P028 Windows SPB 64-bit Edition
+\t (00:04:17)     Journal start - Sun Nov 19 20:05:40 2017
+\t (00:04:17)         Host=THANHLE_PC User=thanhle Pid=10860 CPUs=8
+\t (00:04:17) CmdLine= C:\Cadence\SPB_17.2\tools\bin\allegro.exe
+\t (00:04:17) 
+\d (00:04:17) Design opened: F:/git/Cadence/modules/Zwave_switchV2/allegro/ZWAVE_SWITCHV2.brd
+\i (00:04:18) generaledit 
+\i (00:04:18) zoom in 1 
+\i (00:04:18) setwindow pcb
+\i (00:04:18) zoom in -20.5627 27.3906
+\i (00:04:18) trapsize 1875
+\i (00:04:19) zoom out 1 
+\i (00:04:19) setwindow pcb
+\i (00:04:19) zoom out -18.8379 26.7532
+\i (00:04:19) trapsize 3750
+\i (00:04:22) 3d_viewer 
+\i (00:04:22) trapsize 3750
+\i (00:04:22) generaledit 
+\i (00:04:23) setwindow pcb3D
+\i (00:04:23) trapsize 3750
+\i (00:04:36) setwindow pcb
+\i (00:04:36) 3d_viewer 
+\i (00:04:36) trapsize 3750
+\i (00:04:36) generaledit 
+\i (00:04:37) setwindow pcb3D
+\i (00:04:37) trapsize 3750
+\i (00:04:41) view3d export 
+\i (00:04:46) fillin "C:\Users\thanhle\Desktop\h2.bmp"
+\i (00:04:46) cd "C:\Users\thanhle\Desktop"
+\i (00:04:47) view3d export "C:/Users/thanhle/Desktop/h2.bmp" 
+\i (00:05:54) setwindow pcb
+\i (00:05:54) open 
+\i (00:06:01) fillin "F:\git\Cadence\modules\Wifi_Switch2\allegro\ESP8266_SWITCH.brd"
+\i (00:06:01) cd "F:\git\Cadence\modules\Wifi_Switch2\allegro"
+\t (00:06:01) Opening existing design...
+\t (00:06:02) Grids are drawn 0.2000, 0.2000 apart for enhanced viewability.
+\i (00:06:02) trapsize 1842
+\t (00:06:02)     Journal end - Sun Nov 19 20:07:24 2017
