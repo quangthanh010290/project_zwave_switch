@@ -1,0 +1,10 @@
+".\build_prj\leddimmer_ZW030x_US\Rels\slave_learn.obj",
+".\build_prj\leddimmer_ZW030x_US\Rels\App_RFSetup.obj",
+".\build_prj\leddimmer_ZW030x_US\Rels\BinarySwitch.obj",
+".\build_prj\leddimmer_ZW030x_US\Rels\MyButtons.obj",
+"..\..\Z-Wave\rf_freq\ZW_rf_030x_US.obj",
+"..\..\Z-Wave\lib\slave_routing_ZW030x\zw_slave_routing_ZW030xs.lib" 
+TO ".\build_prj\leddimmer_ZW030x_US\Rels\..\leddimmer_ZW030x_US" 
+
+PRINT(".\build_prj\leddimmer_ZW030x_US\List\..\leddimmer_ZW030x_US.map") DW (13,16,25) NOOL CLASSES(IDATA(D:0-D:0xff),XDATA(X:0-X:0x7ff),CODE(C:0-C:0x7fff))
+SEGMENTS(?CO?ZW_RF020X_FTBL (C:0X7F80)) 

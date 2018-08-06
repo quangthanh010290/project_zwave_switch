@@ -1,0 +1,167 @@
+#****************************************************************************
+#
+# Copyright (c) 2001-2012
+# Sigma Designs, Inc.
+# All Rights Reserved
+#
+#---------------------------------------------------------------------------
+#
+# Description:
+#    Makefile for the ZW0x0x development kit LED Dimmer
+#    This makefile defines the targets built
+#
+# Author:   Erik Friis Harck
+#
+# Last Changed By:  $Author: efh $
+# Revision:         $Revision: 21354 $
+# Last Changed:     $Date: 2011-09-23 13:13:51 +0200 (fr, 23 sep 2011) $
+#
+#***************************************************************************
+
+BDIRS=build
+
+# Standard make names
+ZW0x0x: ZW0x0x_SCHEME_0
+ZW020x: ZW020x_SCHEME_0
+ZW030x: ZW030x_SCHEME_0
+
+ZW0x0x_SCHEME_0: leddimmer_ZW020x_SCHEME_0 leddimmer_ZW030x_SCHEME_0
+ZW020x_SCHEME_0: leddimmer_ZW020x_SCHEME_0
+ZW030x_SCHEME_0: leddimmer_ZW030x_SCHEME_0
+ZW020x_EU_SCHEME_0:  leddimmer_ZW020x_EU_SCHEME_0
+ZW020x_US_SCHEME_0:  leddimmer_ZW020x_US_SCHEME_0
+ZW020x_ANZ_SCHEME_0: leddimmer_ZW020x_ANZ_SCHEME_0
+ZW020x_HK_SCHEME_0:  leddimmer_ZW020x_HK_SCHEME_0
+ZW020x_MY_SCHEME_0:  leddimmer_ZW020x_MY_SCHEME_0
+ZW020x_IN_SCHEME_0:  leddimmer_ZW020x_IN_SCHEME_0
+ZW020x_RU_SCHEME_0:  leddimmer_ZW020x_RU_SCHEME_0
+ZW020x_IL_SCHEME_0:  leddimmer_ZW020x_IL_SCHEME_0
+ZW030x_EU_SCHEME_0:  leddimmer_ZW030x_EU_SCHEME_0
+ZW030x_US_SCHEME_0:  leddimmer_ZW030x_US_SCHEME_0
+ZW030x_ANZ_SCHEME_0: leddimmer_ZW030x_ANZ_SCHEME_0
+ZW030x_HK_SCHEME_0:  leddimmer_ZW030x_HK_SCHEME_0
+ZW030x_MY_SCHEME_0:  leddimmer_ZW030x_MY_SCHEME_0
+ZW030x_IN_SCHEME_0:  leddimmer_ZW030x_IN_SCHEME_0
+ZW030x_RU_SCHEME_0:  leddimmer_ZW030x_RU_SCHEME_0
+ZW030x_IL_SCHEME_0:  leddimmer_ZW030x_IL_SCHEME_0
+
+leddimmer_ZW020x_SCHEME_0: leddimmer_ZW020x_EU_SCHEME_0 leddimmer_ZW020x_US_SCHEME_0 leddimmer_ZW020x_ANZ_SCHEME_0 leddimmer_ZW020x_HK_SCHEME_0 leddimmer_ZW020x_MY_SCHEME_0 leddimmer_ZW020x_IN_SCHEME_0 leddimmer_ZW020x_RU_SCHEME_0 leddimmer_ZW020x_IL_SCHEME_0
+leddimmer_ZW030x_SCHEME_0: leddimmer_ZW030x_EU_SCHEME_0 leddimmer_ZW030x_US_SCHEME_0 leddimmer_ZW030x_ANZ_SCHEME_0 leddimmer_ZW030x_HK_SCHEME_0 leddimmer_ZW030x_MY_SCHEME_0 leddimmer_ZW030x_IN_SCHEME_0 leddimmer_ZW030x_RU_SCHEME_0 leddimmer_ZW030x_IL_SCHEME_0
+
+##***************************************************************************/
+# Include test targets (if any)
+-include Makefile.SecureTestTargets
+
+# The rules below this point are used to build the downloadables
+# by invoking specific makefiles. They all got "depend" as a
+# prerequisite to make sure that the headerfile dependencies are
+# up to date before starting the build.
+
+# Makes the dependency lines from included headerfiles.
+
+## ZW020x secure target
+leddimmer_ZW020x_EU_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=EU RF=EU SCHEME=SCHEME_0
+leddimmer_ZW020x_EU_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_US_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=US RF=US SCHEME=SCHEME_0
+leddimmer_ZW020x_US_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_HK_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=HK RF=HK SCHEME=SCHEME_0
+leddimmer_ZW020x_HK_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_ANZ_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=ANZ RF=ANZ SCHEME=SCHEME_0
+leddimmer_ZW020x_ANZ_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_MY_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=MY RF=MY SCHEME=SCHEME_0
+leddimmer_ZW020x_MY_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_IN_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=IN RF=IN SCHEME=SCHEME_0
+leddimmer_ZW020x_IN_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_RU_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=RU RF=RU SCHEME=SCHEME_0
+leddimmer_ZW020x_RU_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW020x_IL_SCHEME_0:MAKELINE=CHIP=ZW020x  COUNTRY=IL RF=IL SCHEME=SCHEME_0
+leddimmer_ZW020x_IL_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+## ZW030x secure target
+leddimmer_ZW030x_EU_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=EU RF=EU SCHEME=SCHEME_0
+leddimmer_ZW030x_EU_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_US_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=US RF=US SCHEME=SCHEME_0
+leddimmer_ZW030x_US_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_HK_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=HK RF=HK SCHEME=SCHEME_0
+leddimmer_ZW030x_HK_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_ANZ_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=ANZ  RF=ANZ SCHEME=SCHEME_0
+leddimmer_ZW030x_ANZ_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_MY_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=MY  RF=MY SCHEME=SCHEME_0
+leddimmer_ZW030x_MY_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_IN_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=IN  RF=IN SCHEME=SCHEME_0
+leddimmer_ZW030x_IN_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_RU_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=RU  RF=RU SCHEME=SCHEME_0
+leddimmer_ZW030x_RU_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+leddimmer_ZW030x_IL_SCHEME_0:MAKELINE=CHIP=ZW030x  COUNTRY=IL  RF=IL SCHEME=SCHEME_0
+leddimmer_ZW030x_IL_SCHEME_0:
+	$(MAKE) depend $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+	$(MAKE) $(MAKEOPTS) . $(MAKELINE) -f Makefile.common
+
+.PHONY:\
+ ZW0x0x_SCHEME_0\
+ ZW030x_SCHEME_0\
+ ZW020x_SCHEME_0\
+ leddimmer_ZW020x_SCHEME_0\
+ leddimmer_ZW030x_SCHEME_0\
+ leddimmer_ZW0x0x_SCHEME_0\
+ ZW020x_EU_SCHEME_0\
+ ZW020x_US_SCHEME_0\
+ ZW020x_ANZ_SCHEME_0\
+ ZW020x_HK_SCHEME_0\
+ ZW020x_MY_SCHEME_0\
+ ZW020x_IN_SCHEME_0\
+ ZW020x_RU_SCHEME_0\
+ ZW020x_IL_SCHEME_0\
+ ZW030x_EU_SCHEME_0\
+ ZW030x_US_SCHEME_0\
+ ZW030x_ANZ_SCHEME_0\
+ ZW030x_HK_SCHEME_0\
+ ZW030x_MY_SCHEME_0\
+ ZW030x_IN_SCHEME_0\
+ ZW030x_RU_SCHEME_0\
+ ZW030x_IL_SCHEME_0\
+ Makefile.SecureTestTargets

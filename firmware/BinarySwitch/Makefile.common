@@ -1,0 +1,134 @@
+#****************************************************************************
+#
+# Copyright (c) 2001-2012
+# Sigma Designs, Inc.
+# All Rights Reserved
+#
+#---------------------------------------------------------------------------
+#
+#  Description: Common makefile for leddimmers of all types
+#
+#  Author:   Henrik Holm
+#
+#  Last Changed By:  $Author: efh $
+#  Revision:         $Revision: 23890 $
+#  Last Changed:     $Date: 2012-12-18 16:07:07 +0100 (ti, 18 dec 2012) $
+#
+#****************************************************************************
+
+# Target name
+ifneq ($(SCHEME),)
+SEC=_$(SCHEME)
+ENH=_enhanced
+endif
+
+ifneq ($(BOOTLOADER)$(BOOTLOADER_ENABLED),)
+ENH=_enhanced
+endif
+
+ifneq ($(BOOTLOADER_ENABLED),)
+AOFFILE:=bootloader$(UART_CONTROL)$(ENH)_$(CHIP)$(META)_$(COUNTRY)$(TEST)$(SEC).aof
+DONTUSERFC=1
+endif
+
+# Where to build: ...\build\$(TARGETBUILDDIR)
+TARGETBUILDDIR:=leddimmer$(UART_CONTROL)$(ENH)_$(CHIP)$(META)_$(COUNTRY)$(TEST)$(SEC)
+
+ifeq ($(BOOTLOADER),)
+TARGET:=leddimmer$(UART_CONTROL)$(ENH)_$(CHIP)$(META)_$(COUNTRY)$(TEST)$(SEC)
+else
+TARGET:=bootloader$(UART_CONTROL)$(ENH)_$(CHIP)$(META)_$(COUNTRY)$(TEST)$(SEC)
+endif
+
+all: $(TARGET).hex
+
+include $(ZWLIBROOT)\Common\Makefile.common_ZW0x0x_appl
+
+ifneq ($(BOOTLOADER_ENABLED),)
+# Bootloader enabled application code modules:
+RELFILES=\
+ FirmwareSize.obj\
+ LEDdim.obj\
+ one_button.obj\
+ slave_learn.obj\
+ association.obj\
+ FirmwareDescriptor.obj
+else
+ifneq ($(BOOTLOADER),)
+# Bootloader code modules:
+RELFILES=\
+ App_RFSetup.obj
+else
+# Normal application code modules:
+RELFILES=\
+ LEDdim.obj\
+ one_button.obj\
+ slave_learn.obj\
+ association.obj\
+ App_RFSetup.obj
+endif
+endif
+
+CDEFINES+=$(COUNTRY),\
+ APPL_PROD_TEST
+
+ifneq ($(BOOTLOADER),)
+CDEFINES+=,ZW020x,ZW_SLAVE_32,ZW_SLAVE_ROUTING
+endif
+
+ifneq ($(BOOTLOADER),)
+#CDEFINES+=,ZW_ISD51_DEBUG
+endif
+
+ADEFINES+=$(COUNTRY),\
+ $(CHIP)
+
+ifneq ($(BOOTLOADER),)
+ADEFINES+=,ZW020x
+endif
+
+#Test if we should build with security
+ifneq ($(SCHEME),)
+RELFILES+= 8051_AES_common.obj\
+ 8051_AES_core.obj\
+ ZW_Security_AES_module.obj\
+ ZW_TransportSecurity.obj
+CDEFINES+=,SECURITY=$(SCHEME),\
+ $(SCHEME)
+ADEFINES+=,SECURITY=$(SCHEME),\
+ $(SCHEME)
+endif
+
+#Test if we should define META
+ifneq ($(META),)
+CDEFINES+=,METADATA_DUT
+endif
+
+ifneq ($(UART_CONTROL),)
+CDEFINES+=,ZW_BUTTON_UART_CONTROL
+endif
+
+ifneq ($(TEST),)
+CDEFINES+=,TESTFREQ
+ADEFINES+=,TESTFREQ
+endif
+
+ifneq ($(BOOTLOADER_ENABLED),)
+CDEFINES+=,BOOTLOADER_ENABLED
+ADEFINES+=,BOOTLOADER_ENABLED
+endif
+
+#Test if we should use enhanced Library
+ifeq ($(ENH),)
+LIB:=slave_routing
+else
+LIB:=slave_enhanced
+endif
+
+#LIB:=nolib
+
+-include $(ZWLIBROOT)\Common\Makefile.common_ZW0x0x_understand
+-include Makefile.TestDefines
+
+include $(ZWLIBROOT)\Common\Makefile.common_ZW0x0x
+
