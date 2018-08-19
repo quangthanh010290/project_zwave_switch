@@ -1,7 +1,7 @@
-A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 15:45:42 PAGE     1
+A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 23:29:03 PAGE     1
 
 
-MACRO ASSEMBLER A51 V8.02b
+MACRO ASSEMBLER A51 V8.2.7.0
 OBJECT MODULE PLACED IN .\bin\App_RFSetup.obj
 ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\..\Z-Wave\IO_defines\App_RFSetup.a51 INCDIR(..\..\Z-Wave\IO_Defines;
                       ..\..\Z-Wave\include;..\Util_Func) NORB DF(ZW_SLAVE,ZW_SLAVE_ROUTING,ZW_ROUTING_CONTROL,ZW_SELF_HE
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
                 +1    53     
                 +1    54     
                 +1    55     
-A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 15:45:42 PAGE     2
+A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 23:29:03 PAGE     2
 
                 +1    56     
                 +1    57     
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
                 +1   119     
                 +1   120     
                 +1   121     
-A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 15:45:42 PAGE     3
+A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 23:29:03 PAGE     3
 
                 +1   122     
                 +1   123     
@@ -201,7 +201,7 @@ LOC  OBJ            LINE     SOURCE
                      184     
                      185     
                      186     ; What should the power level be when in normal power TX mode
-A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 15:45:42 PAGE     4
+A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 23:29:03 PAGE     4
 
 7FB2                 187             ORG   0x7FB0 + 2
 7FB2 FF              188             DB    0xFF
@@ -218,7 +218,7 @@ LOC  OBJ            LINE     SOURCE
                      198     
                      199     
                      200             END
-A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 15:45:42 PAGE     5
+A51 MACRO ASSEMBLER  APP_RFSETUP                                                          08/06/2018 23:29:03 PAGE     5
 
 SYMBOL TABLE LISTING
 ------ ----- -------
